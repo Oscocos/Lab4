@@ -73,6 +73,25 @@ public class Pokemon {
     }
 
     /**
+     * Creates a new pokemon with input values.
+     *
+     * @param setName sets name
+     * @param setHitPoints sets how much health (1-50)
+     * @param setAttackLevel sets how much is used for attack. (max 49, min 1)
+     * @param setDefenseLevel sets how much is used for defense (50 - attacklevel)
+     */
+    public Pokemon(final String setName, final int setHitPoints, final int setAttackLevel, final int setDefenseLevel) {
+        final int d6num = 6;
+        final int d20num = 20;
+        this.d6 = new Dice(d6num);
+        this.d20 = new Dice(d20num);
+        name = setName;
+        hitPoints = setHitPoints;
+        attackLevel = setAttackLevel;
+        defenseLevel = setDefenseLevel;
+    }
+
+    /**
      * Attack another Pokemon.
      * <p>
      * Calling this method will cause this Pokemon to attack another Pokemon as follows:
